@@ -1,0 +1,48 @@
+{
+    "manifest_version": 3,
+    "name": "GP",
+    "version": "0.1",
+    "description": "jump to the cache description on GP",
+    "permissions": [
+        "scripting",
+        "storage"
+    ],
+    "icons": {
+        "48": "images/gp-48.png",
+        "128": "images/gp-128.png"
+    },
+    "host_permissions": [
+        "https://www.geocaching.com/geocache/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.geocaching.com/geocache/*"
+            ],
+            "js": [
+                "gp.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://www.geocaching.com/play/search"
+            ],
+            "js": [
+                "gc_search.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_icon": "images/gp-128.png"
+    },
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "https://www.geocaching.com/*"
+            ],
+            "resources": [
+                "/gc2gp/*"
+            ]
+        }
+    ]
+}
